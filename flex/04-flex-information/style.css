@@ -35,9 +35,12 @@ body {
   margin-bottom: 32px;
 }
 
-.container {
+.image-container {
   display: flex;
   justify-content: center;
   gap: 52px;
 }
 
+.info{
+  max-width:100px;
+}
