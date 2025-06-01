@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functions in JavaScript</h1>
+    <p>Check the console for outputs of the functions.</p>
+    <p>Functions are reusable blocks of code that perform a specific task.</p>
+    <p>They can take inputs (parameters) and return outputs.</p>
+    <p>Here are some examples of functions:</p>
+    <ul>
+        <li><strong>add7</strong>: Adds 7 to a number.</li>
+        <li><strong>multiply</strong>: Multiplies two numbers.</li>
+        <li><strong>capitalize</strong>: Capitalizes the first letter of a string.</li>
+        <li><strong>lastLetter</strong>: Returns the last letter of a string.</li>
+    </ul>
+    <p>Open the console to see the results of these functions in action.</p>
+    <p>Note: The functions are defined using both traditional function syntax and arrow function syntax.</p>
+    <p>Feel free to modify the inputs and see how the outputs change!</p>
+    <p>Enjoy learning about functions in JavaScript!</p>
+    <script>
+        function add7(num){
+            return num + 7;
+        }
+
+        multiply = (num1, num2) => {
+            return num1 * num2;
+        }
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        function lastLetter(str) {
+            return str.charAt(str.length - 1);
+        }
+
+        console.log(add7(10)); // Outputs: 17
+        console.log(multiply(5, 3)); // Outputs: 15
+        console.log(capitalize("hello")); // Outputs: "Hello"
+        console.log(lastLetter("abcd")); //outputs: "d"
+    </script>
+</body>
+</html>
