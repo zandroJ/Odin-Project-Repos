@@ -1,0 +1,14 @@
+body {
+  font: 1.2em / 1.5 sans-serif;
+}
+
+/*answers*/
+ h2 + p {
+    color: red;
+  }
+
+  .list > li {
+    list-style-type: none;  
+    border-bottom: 1px solid grey;  
+
+  }
