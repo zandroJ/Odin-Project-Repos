@@ -1,0 +1,240 @@
+
+        /* Import Minecraft font */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        body {
+            font-family: 'Press Start 2P', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: #71a7d3; /* Minecraft sky blue */
+            background-image: linear-gradient(to bottom, #71a7d3 0%, #71a7d3 70%, #7c5b33 70%, #7c5b33 100%);
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        #playerInput {
+            margin-bottom: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #playerInput input {
+            padding: 0.8rem 1rem;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            border: 4px solid #5a3b1d; /* Minecraft wood border */
+            border-radius: 0;
+            width: 180px;
+            background: #8d6942; /* Minecraft plank color */
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        #playerInput input:focus {
+            border-color: #d4af37; /* Gold border on focus */
+            outline: none;
+        }
+
+        #playerInput input::placeholder {
+            color: #d3d3d3;
+        }
+
+        #startBtn, #restartBtn {
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            border: 4px solid #5a3b1d;
+            border-radius: 0;
+            background: #8d6942;
+            color: white;
+            cursor: pointer;
+            margin-left: 0.5rem;
+            transition: all 0.2s ease;
+            font-family: 'Press Start 2P', cursive;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            top: 0;
+        }
+
+        #startBtn:hover, #restartBtn:hover {
+            background: #7c5b33;
+            top: -2px;
+            box-shadow: 0 7px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #startBtn:active, #restartBtn:active {
+            top: 3px;
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .cell {
+            width: 120px;
+            height: 120px;
+            background: #8d6942; /* Dirt block color */
+            box-shadow: 0 5px 0 #5a3b1d, inset 0 0 10px rgba(0,0,0,0.3);
+            font-size: 3.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0;
+            user-select: none;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cell::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20%;
+            background: rgba(107, 168, 79, 0.4); /* Grass top */
+        }
+
+        .cell:hover {
+            background: #9d7a52;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 #5a3b1d, inset 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .cell.x-mark {
+            color: #e74c3c; /* Red for swords */
+            text-shadow: 3px 3px 0 #7d2c25;
+        }
+
+        .cell.o-mark {
+            color: #3498db; /* Blue for pickaxes */
+            text-shadow: 3px 3px 0 #1a4a6b;
+        }
+
+        #message {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            min-height: 1.5em;
+            text-shadow: 3px 3px 0 #000;
+            padding: .8rem 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            
+            
+        }
+
+        .cell.marked {
+            animation: pop 0.3s ease forwards;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .minecraft-title {
+            font-size: 2.5rem;
+            color: #f0f0f0;
+            text-shadow: 4px 4px 0 #3f3f3f, 8px 8px 0 rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .crafting-table {
+            position: relative;
+            margin-top: 1rem;
+        }
+
+        .crafting-table::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 20px;
+            background: #5a3b1d;
+            bottom: -10px;
+            left: -10%;
+            border-radius: 5px;
+            z-index: -1;
+            box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Creeper decoration */
+        .creeper {
+            position: absolute;
+            width: 40px;
+            height: 70px;
+            background: #0c0;
+            top: 20px;
+            right: 20px;
+            border: 4px solid #000;
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .creeper::before, .creeper::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #000;
+        }
+
+        .creeper::before {
+            top: 15px;
+            left: 7px;
+        }
+
+        .creeper::after {
+            top: 15px;
+            right: 7px;
+        }
+
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+
+        .cloud:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 40px;
+        }
+
+        .cloud:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            width: 120px;
+            height: 50px;
+        }
+ 
