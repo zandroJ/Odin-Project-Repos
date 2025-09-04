@@ -1,0 +1,37 @@
+ /* Basic dropdown styling */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .dropdown button {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      flex-direction: column;
+      background: white;
+      border: 1px solid #ccc;
+      min-width: 150px;
+      z-index: 10;
+    }
+
+    .dropdown-menu a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f0f0f0;
+    }
+
+    .dropdown-menu.visible {
+      display: flex;
+    }
