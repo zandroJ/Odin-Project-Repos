@@ -23,3 +23,10 @@ return result;
 }
 
 console.log(permutation([1, 2, 3]));
+
+
+// 1. Pick an item
+// 2. Remove it
+// 3. Find all permutations of what's left
+// 4. Put the picked item in front of each one
+// 5. Add them to the result
