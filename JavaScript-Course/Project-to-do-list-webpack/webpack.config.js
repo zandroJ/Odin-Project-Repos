@@ -6,13 +6,12 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
+   filename: 'main.js',
+     path: path.resolve(__dirname),
   },
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/template.html"],
+    static: './',
   },
   plugins: [
     new HtmlWebpackPlugin({

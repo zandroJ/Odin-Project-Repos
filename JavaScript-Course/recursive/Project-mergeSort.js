@@ -1,9 +1,9 @@
 function mergeSort(arr,l,h){
-    if(l < h){
-        let mid = Math.floor((l + h) / 2);
-        mergeSort(arr,l,mid);
-        mergeSort(arr,mid+1,h);
-        merge(arr, l, mid, h);
+    if(l < h){ //if there is more than one element
+        let mid = Math.floor((l + h) / 2); //find the mid point
+        mergeSort(arr,l,mid); //sort the left half
+        mergeSort(arr,mid+1,h);//sort the right half
+        merge(arr, l, mid, h);//merge the two halves
     }
 }
 function merge(arr, l, mid, h) {
