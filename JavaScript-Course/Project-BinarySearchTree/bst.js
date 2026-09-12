@@ -271,6 +271,31 @@ height(value) {
 
     return getHeight(current);
 }
+depth(value) {
+    // Find the node containing the value
+    let current = this.root;
+    let counter = 0;
+    while (current !== null) {
+        if (value === current.storedData) {
+            return counter;
+        }
 
+        if (value < current.storedData) {
+            current = current.leftChild;
+            counter++;
+        } else {
+            current = current.rightChild;
+            counter++;
+        }
+    }
 
+    // Value wasn't found
+    if (current === null) {
+        return undefined;
+    }
+
+    }
 }
+
+
+
