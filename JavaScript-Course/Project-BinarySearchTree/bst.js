@@ -295,6 +295,26 @@ depth(value) {
     }
 
     }
+
+isBalanced(){        
+const checkBalance = (node) =>{
+if (node === null) {
+    return true;
+}
+        let heightLeft = height(node.leftChild) //this calculates the height 
+        let heightRight = height(node.rightChild)
+if ( Math.abs(heightLeft - heightRight) <= 1 ){
+ return checkBalance(node.leftChild) && checkBalance(node.rightChild);
+
+}
+else{
+    return false;
+}
+
+        } 
+return checkBalance(this.root);
+
+    }
 }
 
 
